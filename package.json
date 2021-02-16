@@ -1,0 +1,23 @@
+{
+  "name": "project-tech",
+  "version": "1.0.0",
+  "description": "This is a project for block tech",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbinux/matching-app-blok-tech.git"
+  },
+  "author": "Robbin Jansen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robbinux/matching-app-blok-tech/issues"
+  },
+  "homepage": "https://github.com/robbinux/matching-app-blok-tech#readme",
+  "dependencies": {
+    "camelcase": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
