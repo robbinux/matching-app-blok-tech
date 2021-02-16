@@ -1,15 +1,14 @@
-const express = require('express');
-
-const app = express();
-
-const port = 3000
-
-
-
-
-
-app.listen(3000, () => {​​​​
-
-  console.log(`Express web app on localhost:3000`);
-
-}​​​​);
+ // server.js
+ var express = require('express');
+ var app = express();
+ var port = 3000;
+ 
+ // start the server
+ app.listen(port, function() {
+   console.log('app started');
+ });
+ 
+ // route our app
+ app.get('/', function(req, res) {
+   res.send('hello world!');
+ });
