@@ -4,7 +4,11 @@
  var port = 3000;
  app.use(express.static('public'));
 
- 
+ const Handlebars = require("handlebars");
+ const template = Handlebars.compile("Name: {{name}}");
+ console.log(template({ name: "Nils" }));
+
+
  // route our app
  app.get('/', function(req, res) {
    res.send('hello world!');
