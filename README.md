@@ -16,4 +16,4 @@ UpStart vormt een kickstart voor elke jonge ondernemer. Je geeft in de app aan i
 
 ## License
 
-Usage is provided under the MIT License . See LICENSE for the full details.
+Usage is provided under the MIT License . See [LICENSE](https://github.com/robbinux/matching-app-blok-tech/blob/main/LICENSE) for the full details.
