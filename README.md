@@ -8,8 +8,8 @@ UpStart vormt een kickstart voor elke jonge ondernemer. Je geeft in de app aan i
 
 ## Install
 
-git clone https://github.com/robbinux/matching-app-blok-tech.git
+`git clone https://github.com/robbinux/matching-app-blok-tech.git`
 
-git pull
+`git pull`
 
-npm start
+`npm start`
