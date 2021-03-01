@@ -8,4 +8,8 @@ UpStart vormt een kickstart voor elke jonge ondernemer. Je geeft in de app aan i
 
 ## Install
 
-git clone 
+git clone
+
+git pull
+
+npm start
