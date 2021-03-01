@@ -13,3 +13,7 @@ UpStart vormt een kickstart voor elke jonge ondernemer. Je geeft in de app aan i
 `git pull`
 
 `npm start`
+
+## License
+
+Usage is provided under the MIT License . See LICENSE for the full details.
