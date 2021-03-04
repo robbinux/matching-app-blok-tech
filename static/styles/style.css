@@ -1,0 +1,62 @@
+/* GLOBAL POSITIONING */
+html {
+    display: flex;
+    justify-content: center;
+}
+
+
+body{
+    background-color: #4D4D4D;
+    color: white;
+    font-family: staatliches, roboto, sans-serif;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* CARDS */
+div.card {
+    height: 25em;
+    width: 20em;
+    padding: 2em;
+    background-image: url(../images/guy-925730_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 3em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+h2.businessname{
+    font-size: 2em;
+}
+
+h2.username{
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* CARD BUTTONS X and V */
+div.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+button {
+    height: 5em;
+    width: 5em;
+    border-radius: 100%;
+}
+
+button.X {
+    background-color: red;
+}
+
+button.V {
+    background-color: green;
+}
