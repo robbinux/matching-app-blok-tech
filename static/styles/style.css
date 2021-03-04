@@ -6,14 +6,31 @@ html {
 
 
 body{
-    background-color: #4D4D4D;
+    background-image: url(../images/background-upstart.jpg);
+    background-size: cover;
+    background-position: center;
     color: white;
     font-family: staatliches, roboto, sans-serif;
     height: 100vh;
+    margin: 0;
+}
+
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 2em 0;
+}
+
+img.logo {
+    height: 2.5em;
 }
 
 h1 {
     text-align: center;
+    margin: 0;
+    padding: 0 0 0 0.5em;
 }
 
 /* CARDS */
@@ -24,7 +41,8 @@ div.card {
     background-image: url(../images/guy-925730_1280.jpg);
     background-size: cover;
     background-position: center;
-    border-radius: 3em;
+    border-radius: 2em;
+    box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.4);
 
     display: flex;
     flex-direction: column;
@@ -33,6 +51,7 @@ div.card {
 
 h2.businessname{
     font-size: 2em;
+    
 }
 
 h2.username{
@@ -43,8 +62,8 @@ h2.username{
 /* CARD BUTTONS X and V */
 div.buttons {
     display: flex;
-    justify-content: space-between;
-    margin: 1em;
+    justify-content: space-evenly;
+    margin: 2em;
 }
 
 button {
@@ -59,4 +78,59 @@ button.X {
 
 button.V {
     background-color: green;
+}
+
+
+/* BOTTOM NAV BUTTONS */
+
+nav {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+}
+
+nav a {
+    border-radius: 100%;
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+nav a.matches{
+    width: 4em;
+    height: 4em;
+}
+
+nav a.matches img{
+    width: 2em;
+    height: 2em;
+}
+
+nav a.home {
+    width: 5em;
+    height: 5em;
+}
+
+nav a.home img{
+    width: 3em;
+    height: 3em;
+}
+
+nav a.profile {
+    width: 4em;
+    height: 4em;
+}
+
+nav a.profile img{
+    width: 2em;
+    height: 2em;
 }
