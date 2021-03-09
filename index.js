@@ -27,14 +27,14 @@ app.set('view engine', 'hbs');
   });
 });
 
-app.get('/about-us', (req, res) => {
-  res.render('about-us', {msg: null});
+app.get('/profile', (req, res) => {
+  res.render('profile', {msg: null});
 });
 
-app.get('/peoples', (req, res) => {
-  res.render('peoples', {peoples: [
-    {name: 'jhon smith'},
-    {name: 'jhonny Bravo'}
+app.get('/matches', (req, res) => {
+  res.render('matches', {peoples: [
+    {name: 'Jan Piet'},
+    {name: 'Erik de Vries'}
   ]});
 });
 
