@@ -1,26 +1,42 @@
  // server.js
- var express = require('express');
- var app = express();
  var port = 3000;
- app.use(express.static('public'));
 
+ const express = require('express');
+ const exphbs = require('express-handlebars');
+ const app = express();
  const Handlebars = require("handlebars");
  const template = Handlebars.compile("Name: {{name}}");
- console.log(template({ name: "Nils" }));
+ console.log(template({ name: "UPSTART" }));
 
+// Configure template Engine and Main File
+app.engine('hbs', exphbs({
+  defaultLayout: 'main',
+  extname: '.hbs',
+  helpers: {
+    todaysDate:(date) => new Date(date)
+  }
+}));
+
+ // Seting template Engine
+app.set('view engine', 'hbs');
 
  // route our app
- app.get('/', function(req, res) {
-   res.send('hello world!');
- });
-
- app.get('/movies', function(req, res) {
-    res.send('find your movies here');
+ app.get('/', (req, res) => {
+  res.render('home', {
+    msg: 'This is home page'
   });
+});
 
- app.get('/movies/:movieId', function(req, res) {
-    res.send('<h1>Detailpage of movie '+req.params.movieId+'</h1>');
-  });
+app.get('/about-us', (req, res) => {
+  res.render('about-us', {msg: null});
+});
+
+app.get('/peoples', (req, res) => {
+  res.render('peoples', {peoples: [
+    {name: 'jhon smith'},
+    {name: 'jhonny Bravo'}
+  ]});
+});
 
  //404
   app.use(function(req, res, next) {
