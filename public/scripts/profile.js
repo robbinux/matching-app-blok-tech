@@ -1,6 +1,6 @@
 
-var button = document.querySelector("button");
-var element = document.querySelector("div");
+const button = document.querySelector("button");
+const element = document.querySelector("div");
 
 button.addEventListener("click", function() {
   element.classList.toggle("yay");
