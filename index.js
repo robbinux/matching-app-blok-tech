@@ -17,6 +17,10 @@ app.engine('hbs', exphbs({
   }
 }));
 
+// Declaring static files
+app.use(express.static(__dirname + "/public"));
+
+
  // Seting template Engine
 app.set('view engine', 'hbs');
 
@@ -43,14 +47,10 @@ app.get('/matches', (req, res) => {
     res.status(404).send('page not found');
   });
 
-  
-
-
-
-
-
 // start the server
  app.listen(port, function() {
     console.log('app started');
   });
-  
+
+
+
