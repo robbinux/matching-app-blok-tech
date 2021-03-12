@@ -7,3 +7,8 @@ buttonX.addEventListener("click", function() {
 });
 
 //Swipe Right
+
+
+
+
+

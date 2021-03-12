@@ -7,29 +7,24 @@ const exphbs = require('express-handlebars');
 const app = express();
 const Handlebars = require("handlebars");
 const template = Handlebars.compile("Name: {{name}}");
+const { MongoClient } = require('mongodb');
+const bodyParser = require('body-parser');
+const slug = require('slug');
+const multer = require('multer');
+
 console.log(template({ name: "UPSTART" }));
 
-console.log(process.env.TESTVAR)
- 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://arjay432:<6035>@cluster0.zujnn.mongodb.net/database1?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
 
 
 let db = null;
 
-// functie om de database te connecten
+// function to connect to database
 
 async function connectDB() {
 
   const uri = process.env.DB_URI
 
-  // connectie maken met de database
+  // make connection
 
   const options = {
 
@@ -48,19 +43,33 @@ connectDB()
 
   .then(() => {
 
-    // succes om te verbinden
+    // connection made
 
-    console.log('Feest!')
+    console.log('We have a connection to Mongo!')
 
   })
 
   .catch(error => {
 
-    // geen succes om te verbinden
+    // connection failed
 
     console.log(error)
 
   });
+
+// get users from database
+
+
+app.get('/', async (req, res) => {
+  let users = {};
+  users = await db.collection('users').find().toArray();
+  var user = users[Math.floor(Math.random()*users.length)];
+  res.render('home', {title:'Home', user});
+});
+
+
+
+
 
 
 // Configure template Engine and Main File
@@ -82,7 +91,8 @@ app.set('view engine', 'hbs');
  // route our app
  app.get('/', (req, res) => {
   res.render('home', {
-    msg: 'This is home page'
+    msg: 'This is home page',
+    businessName: 'RJ Digital Soluions'
   });
 });
 
@@ -90,12 +100,14 @@ app.get('/profile', (req, res) => {
   res.render('profile', {msg: null});
 });
 
-app.get('/matches', (req, res) => {
-  res.render('matches', {peoples: [
-    {name: 'Jan Piet'},
-    {name: 'Erik de Vries'}
-  ]});
+app.get('/matches', async (req, res) => {
+  let users = {};
+  users = await db.collection('users').find().toArray();
+  res.render('matches', {title:'matches', users});
 });
+
+
+
 
  //404
   app.use(function(req, res, next) {

@@ -4,5 +4,5 @@
     { "id": "user1", "name": "Rick Derkssen", "age": "25", "businessName": "DerkSoft", "branche": "ICT",  "size": "3-5", "length": "2"},
     { "id": "user1", "name": "Danny Smit", "age": "21", "businessName": "SmitComp", "branche": "ICT", "size": "1", "length": "1"},
     { "id": "user1", "name": "Frits de Boer", "age": "24", "businessName": "FritSoft", "branche": "ICT", "size": "2-3", "length": "3"},
-    { "id": "user1", "name": "Laura Hartman", "age": "27", "businessName": "SunnyDays", "branche": "Cultuur", "size": "3-5", "length": "4"},
+    { "id": "user1", "name": "Laura Hartman", "age": "27", "businessName": "SunnyDays", "branche": "Cultuur", "size": "3-5", "length": "4"}
 ]
