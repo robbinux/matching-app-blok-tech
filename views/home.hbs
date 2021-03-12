@@ -1,30 +1,32 @@
 {{> header}}
 
-<h1>Find your Match</h1>
+<h2>Find your Match</h2>
 <div class="container">
 
-
+{{#each users}}
 <div class="card">
-    <h2 class="businessname">{{businessName}}</h2>
+  
+    <h3 class="businessname">{{this.businessName}}</h3>
 
     <ul>
-        <li>{{branche}}</li>
-        <li>{{size}}</li>
-        <li>{{time}}</li>
+        <li>{{this.branche}}</li>
+        <li>{{this.size}}</li>
+        <li>{{this.time}}</li>
     </ul>
 
-    <h2 class="username">{{name}}, {{age}}</h2>
+    <h3 class="username">{{this.name}}, {{this.age}}</h3>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis porro magnam quae tempora ipsum reprehenderit libero ipsam at voluptas soluta magni iusto, repudiandae eius ullam necessitatibus minus facere fugiat accusantium.</p>
 
 </div>
+{{/each}}
 
-    <div class="buttons">
+<div class="buttons">
     <button class="X"></button>
     <button class="V"></button>
-    </div>
+</div>
   
 
-</div>
+
 
 
 <script src="/scripts/home.js"></script>

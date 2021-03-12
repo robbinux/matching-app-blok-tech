@@ -62,8 +62,8 @@ connectDB()
 app.get('/', async (req, res) => {
   let users = {};
   users = await db.collection('users').find().toArray();
-  var user = users[Math.floor(Math.random()*users.length)];
-  res.render('home', {title:'Home', user});
+  // var user = users[Math.floor(Math.random()*users.length)];
+  res.render('home', {title:'Home', users});
 });
 
 
@@ -72,7 +72,7 @@ app.get('/', async (req, res) => {
 // upload profile to database
 app.post('/profile', upload.single('fname'), function (req, res, next) {
 
-  
+
 })
 
 

@@ -33,6 +33,13 @@ h1 {
     padding: 0 0 0 0.5em;
 }
 
+h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0 0 2em 0em; 
+    font-size: 2em;
+}
+
 /* CARDS */
 div.card {
     height: 25em;
@@ -49,12 +56,12 @@ div.card {
     justify-content: flex-end;
 }
 
-h2.businessname{
+h3.businessname{
     font-size: 2em;
     
 }
 
-h2.username{
+h3.username{
     font-size: 1.5em;
     margin: 0;
 }
