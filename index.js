@@ -11,6 +11,7 @@ const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser');
 const slug = require('slug');
 const multer = require('multer');
+const upload = multer({ dest: 'uploads/'})
 
 console.log(template({ name: "UPSTART" }));
 
@@ -58,8 +59,6 @@ connectDB()
   });
 
 // get users from database
-
-
 app.get('/', async (req, res) => {
   let users = {};
   users = await db.collection('users').find().toArray();
@@ -68,6 +67,13 @@ app.get('/', async (req, res) => {
 });
 
 
+
+
+// upload profile to database
+app.post('/profile', upload.single('fname'), function (req, res, next) {
+
+  
+})
 
 
 
