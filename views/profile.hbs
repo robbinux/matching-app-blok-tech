@@ -1,10 +1,10 @@
 {{> header}}
-<div class="container">
+<div class="profile-container">
   <h1>Your Profile</h1>
-  <form NAME="profileform" ACTION="/profile" METHOD="post" enctype="multipart/form-data">
+  <form NAME="profileform" ACTION="/profile" METHOD="post">
 
-  <label for="img">Stel een profielfoto in:</label><br>
-  <input type="file" id="img" name="img" accept="image/*"><br>
+  {{!-- <label for="img">Stel een profielfoto in:</label><br>
+  <input type="file" id="img" name="img" accept="image/*"><br> --}}
 
   <label for="fname">Voornaam:</label><br>
   <input type="text" id="fname" name="fname" value=""><br>

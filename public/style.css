@@ -1,7 +1,6 @@
 /* GLOBAL POSITIONING */
 html {
-    display: flex;
-    justify-content: center;
+
 }
 
 
@@ -13,6 +12,11 @@ body{
     font-family: staatliches, roboto, sans-serif;
     height: 100vh;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -41,15 +45,24 @@ h2 {
 }
 
 /* CARDS */
+div.home-container{
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 19em;
+}
+
 div.card {
     height: 25em;
-    width: 20em;
+    min-width: 15em;
     padding: 2em;
+    margin: 0 1em;
     background-image: url(../images/guy-925730_1280.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 2em;
     box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.4);
+    scroll-snap-align: start;
 
     display: flex;
     flex-direction: column;

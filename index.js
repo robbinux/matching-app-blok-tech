@@ -68,13 +68,11 @@ app.get('/', async (req, res) => {
 
 
 
-
 // upload profile to database
 app.post('/profile', upload.single('fname'), function (req, res, next) {
 
 
 })
-
 
 
 
