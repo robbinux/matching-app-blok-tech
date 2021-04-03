@@ -12,69 +12,10 @@ const bodyParser = require('body-parser');
 const slug = require('slug');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/'})
+const mongoose = require('mongoose');
+const { Db } = require('mongodb');
 
 console.log(template({ name: "UPSTART" }));
-
-
-
-let db = null;
-
-// function to connect to database
-
-async function connectDB() {
-
-  const uri = process.env.DB_URI
-
-  // make connection
-
-  const options = {
-
-    useUnifiedTopology: true
-
-  };
-
-  const client = new MongoClient(uri, options)
-
-  await client.connect();
-
-  db = await client.db(process.env.DB_NAME)
-}
-
-connectDB()
-
-  .then(() => {
-
-    // connection made
-
-    console.log('We have a connection to Mongo!')
-
-  })
-
-  .catch(error => {
-
-    // connection failed
-
-    console.log(error)
-
-  });
-
-// get users from database
-app.get('/', async (req, res) => {
-  let users = {};
-  users = await db.collection('users').find().toArray();
-  // var user = users[Math.floor(Math.random()*users.length)];
-  res.render('home', {title:'Home', users});
-});
-
-
-
-// upload profile to database
-app.post('/profile', upload.single('fname'), function (req, res, next) {
-
-
-})
-
-
 
 // Configure template Engine and Main File
 app.engine('hbs', exphbs({
@@ -88,27 +29,74 @@ app.engine('hbs', exphbs({
 // Declaring static files
 app.use(express.static(__dirname + "/public"));
 
-
- // Seting template Engine
+// Seting template Engine
 app.set('view engine', 'hbs');
 
- // route our app
- app.get('/', (req, res) => {
-  res.render('home', {
-    msg: 'This is home page',
-    businessName: 'RJ Digital Soluions'
-  });
+//BodyParser
+app.use(express.urlencoded({ extended: false }));
+
+
+// Database schemas
+// const { Schema } = mongoose;
+const usersSchema = new mongoose.Schema({
+  name: {
+    type: String
+  },
+  age: {
+    type: String
+  },
+  businessName: {
+    type: String
+  },
+  branche: {
+    type: String
+  },
+  size: {
+    type: String
+  },
+  time: {
+    type: String
+  }
 });
+
+// Collections
+const usersModel = mongoose.model('users', usersSchema);
+// const vacaturesCollection = mongoose.model('vacatures', vacaturesSchema);
+const uri = process.env.DB_URI;
+
+//Connect Database
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => console.log('MongoDB connection made'))
+.catch(err => console.log(err));
+
+
+
+// route our app
+// get users from database
+app.get('/', async (req, res) => {
+
+  let userlist = {};
+  userlist = await usersModel.find().toArray();
+  res.render('home', {title:'home', userlist});
+});
+
+
+
 
 app.get('/profile', (req, res) => {
   res.render('profile', {msg: null});
 });
 
 app.get('/matches', async (req, res) => {
-  let users = {};
-  users = await db.collection('users').find().toArray();
   res.render('matches', {title:'matches', users});
 });
+
+// upload profile to database
+// app.post('/profile', upload.single('fname'), function (req, res, next) {
+// })
+
+
+
 
 
 
