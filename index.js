@@ -68,11 +68,13 @@ app.get('/', async (req, res) => {
 
 
 
+
 // upload profile to database
 app.post('/profile', upload.single('fname'), function (req, res, next) {
 
 
 })
+
 
 
 
@@ -122,6 +124,3 @@ app.get('/matches', async (req, res) => {
  app.listen(port, function() {
     console.log('app started');
   });
-
-
-

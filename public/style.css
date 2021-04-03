@@ -52,6 +52,10 @@ div.home-container{
     width: 19em;
 }
 
+div.home-container::-webkit-scrollbar {
+    display: none;
+  }
+
 div.card {
     height: 25em;
     min-width: 15em;
