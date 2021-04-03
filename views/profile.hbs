@@ -1,16 +1,16 @@
 {{> header}}
 <div class="profile-container">
   <h1>Your Profile</h1>
-  <form NAME="profileform" ACTION="/profile" METHOD="post">
+  <form NAME="profileform" ACTION="/profile" METHOD="post" enctype="multipart/form-data">
 
-  {{!-- <label for="img">Stel een profielfoto in:</label><br>
-  <input type="file" id="img" name="img" accept="image/*"><br> --}}
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value=""><br>
 
-  <label for="fname">Voornaam:</label><br>
-  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="age">Age:</label><br>
+  <input type="text" id="age" name="age" value=""><br>
 
-  <label for="lname">Achternaam:</label><br>
-  <input type="text" id="lname" name="lname" value=""><br><br>
+  <label for="businessName">Business name:</label><br>
+  <input type="text" id="businessName" name="businessName" value=""><br>
 
   <label for="branche">Kies een Branche:</label><br>
   <select id="branche" name="branche">
@@ -29,22 +29,22 @@
     <option value="Zorg">Zorg</option>
   </select><br>
 
-  <label for="experience">Ondernemerservaring (jaren):</label><br>
-  <select id="experience" name="experience">
-    <option value="0-1">0-1</option>
-    <option value="1-3">1-3</option>
-    <option value="3-6">3-6</option>
-    <option value="6-10">6-10</option>
-  </select><br>
-
-  <label for="employees">Aantal werknemers:</label><br>
-  <select id="employees" name="employees">
+  <label for="size">Aantal werknemers:</label><br>
+  <select id="size" name="size">
     <option value="1">1</option>
     <option value="1-3">1-3</option>
     <option value="3-6">3-6</option>
     <option value="6-10">6-10</option>
     <option value="10-15">10-15</option>
     <option value="15-20">15-20</option>
+  </select><br>
+
+  <label for="time">Ondernemerservaring (jaren):</label><br>
+  <select id="time" name="time">
+    <option value="0-1">0-1</option>
+    <option value="1-3">1-3</option>
+    <option value="3-6">3-6</option>
+    <option value="6-10">6-10</option>
   </select><br>
 
   <input type="submit" value="Bijwerken">

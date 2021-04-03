@@ -58,25 +58,8 @@ connectDB()
 
   });
 
-// get users from database
-app.get('/', async (req, res) => {
-  let users = {};
-  users = await db.collection('users').find().toArray();
-  // var user = users[Math.floor(Math.random()*users.length)];
-  res.render('home', {title:'Home', users});
-});
-
-
-
-
-// upload profile to database
-app.post('/profile', upload.single('fname'), function (req, res, next) {
-
-
-})
-
-
-
+//BodyParser
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Configure template Engine and Main File
 app.engine('hbs', exphbs({
@@ -94,18 +77,49 @@ app.use(express.static(__dirname + "/public"));
  // Seting template Engine
 app.set('view engine', 'hbs');
 
- // route our app
- app.get('/', (req, res) => {
-  res.render('home', {
-    msg: 'This is home page',
-    businessName: 'RJ Digital Soluions'
-  });
+
+
+
+// ----------------- ROUTING -----------------
+
+// HOME PAGE (SWIPING)
+app.get('/', async (req, res) => {
+  let users = {};
+  users = await db.collection('users').find().toArray();
+  // var user = users[Math.floor(Math.random()*users.length)];
+  res.render('home', {title:'Home', users});
 });
 
+
+
+// PROFILE PAGE
 app.get('/profile', (req, res) => {
-  res.render('profile', {msg: null});
+  res.render('profile', {title:'add profile'});
 });
 
+app.post('/profile', async (req,res) => {
+  await connectDB()
+  .then(() => {
+     console.log('Connection made for profile :)')
+  })
+  .catch( error => {
+     console.log(error)
+  });
+  
+  const profile = {
+    'name': req.body.name,
+    'age': req.body.age,
+    'businessName': req.body.businessName,
+    'branche': req.body.branche,
+    'size': req.body.size,
+    'time': req.body.time
+  };
+  await db.collection('profile').insertOne(profile);
+});
+
+
+
+// MATCHES PAGE
 app.get('/matches', async (req, res) => {
   let users = {};
   users = await db.collection('users').find().toArray();
@@ -114,8 +128,7 @@ app.get('/matches', async (req, res) => {
 
 
 
-
- //404
+//404
   app.use(function(req, res, next) {
     res.status(404).send('page not found');
   });
