@@ -14,7 +14,7 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
 }
@@ -40,7 +40,7 @@ h1 {
 h2 {
     text-align: center;
     margin: 0;
-    padding: 0 0 2em 0em; 
+    padding: 0 0 5vh 0; 
     font-size: 2em;
 }
 
@@ -50,6 +50,7 @@ div.home-container{
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     width: 19em;
+    user-select: none;
 }
 
 div.home-container::-webkit-scrollbar {
@@ -61,7 +62,8 @@ div.card {
     min-width: 15em;
     padding: 2em;
     margin: 0 1em;
-    background-image: url(../images/guy-925730_1280.jpg);
+    /* background-image: url(../images/guy-925730_1280.jpg); */
+    /* background-color: black; */
     background-size: cover;
     background-position: center;
     border-radius: 2em;
@@ -71,16 +73,57 @@ div.card {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    overflow: hidden;
+}
+
+div.textoverlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+div.textoverlaytop{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.card ul{
+    list-style: none;
+    font-size: 1.2em;
+    margin: 1.7em 0 0 0;
+    text-align: right;
+    padding: 0;
+}
+
+div.card ul li{
+    min-width: 1em;
+    margin: 1em 0;
 }
 
 h3.businessname{
     font-size: 2em;
-    
+    margin: 0;
 }
+
+h4.branche{
+    font-size: 1.5em;
+    margin: 0.4em 0;
+}
+
 
 h3.username{
     font-size: 1.5em;
     margin: 0;
+}
+
+div.card img{
+    z-index: -1;
+    width: 300%;
+    position: relative;
+    left: -15em;
+    top: 2em;
 }
 
 /* CARD BUTTONS X and V */
@@ -155,6 +198,22 @@ nav a.profile {
 }
 
 nav a.profile img{
-    width: 2em;
-    height: 2em;
+    width: 2.3em;
+    height: 2.3em;
+}
+
+/* PROFILE PAGE */
+
+input.submit{
+    padding: 1em 2em;
+    border: none;
+    border-radius: 3em;
+    font-family: inherit;
+}
+
+
+/* MATCHES */
+ul.people_list{
+    list-style: none;
+    padding: 0;
 }

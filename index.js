@@ -93,8 +93,10 @@ app.get('/', async (req, res) => {
 
 
 // PROFILE PAGE
-app.get('/profile', (req, res) => {
-  res.render('profile', {title:'add profile'});
+app.get('/profile', async (req, res) => {
+
+  profile = await db.collection('profile').find().toArray();
+  res.render('profile', {title:'add profile', profile});
 });
 
 app.post('/profile', async (req,res) => {
@@ -115,6 +117,9 @@ app.post('/profile', async (req,res) => {
     'time': req.body.time
   };
   await db.collection('profile').insertOne(profile);
+  
+  savedprofile = await db.collection('profile').find().toArray();
+  res.render('profile', {title:'add profile', savedprofile});
 });
 
 
