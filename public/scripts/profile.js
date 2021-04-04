@@ -1,7 +1,8 @@
 
-// const button = document.querySelector("button");
-// const element = document.querySelector("div");
+const button = document.querySelector(".submit");
 
 // button.addEventListener("click", function() {
-//   element.classList.toggle("yay");
+//   document.querySelector("form").classList.add("formhidden");
+//   document.querySelector(".card").classList.remove("cardhidden");
+//   window.location.reload(true);
 // });

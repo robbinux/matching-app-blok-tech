@@ -10,8 +10,8 @@ const template = Handlebars.compile("Name: {{name}}");
 const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser');
 const slug = require('slug');
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/'})
+// const multer = require('multer');
+// const upload = multer({ dest: 'uploads/'})
 
 console.log(template({ name: "UPSTART" }));
 
@@ -58,7 +58,7 @@ connectDB()
 
   });
 
-//BodyParser
+// BodyParser
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Configure template Engine and Main File
@@ -69,6 +69,25 @@ app.engine('hbs', exphbs({
     todaysDate:(date) => new Date(date)
   }
 }));
+
+// MULTER
+// const storage = multer.diskStorage({
+//   destination: function (req, file, callback) {
+//      callback(null, './public/uploads');
+//   },
+
+//   filename: function (req, file, callback){
+//      callback(null, Date.now() + '-' + file.originalname)
+//   }
+// });
+
+// const upload = multer({
+//   storage: storage,
+//   limits: {
+//      fileSize: 1024 * 1024 * 3,
+//   },
+// });
+
 
 // Declaring static files
 app.use(express.static(__dirname + "/public"));
@@ -116,13 +135,27 @@ app.post('/profile', async (req,res) => {
     'size': req.body.size,
     'time': req.body.time
   };
+  
+  await db.collection('profile').deleteMany();
   await db.collection('profile').insertOne(profile);
   
   savedprofile = await db.collection('profile').find().toArray();
   res.render('profile', {title:'add profile', savedprofile});
 });
 
+// VIEW PROFILE
+app.get('/viewprofile', async (req, res) => {
 
+  profile = await db.collection('profile').find().toArray();
+  res.render('viewprofile', {title:'view profile', profile});
+});
+
+// EDIT PROFILE
+app.get('/editprofile', async (req, res) => {
+
+  profile = await db.collection('profile').find().toArray();
+  res.render('editprofile', {title:'edit profile', profile});
+});
 
 // MATCHES PAGE
 app.get('/matches', async (req, res) => {

@@ -1,0 +1,33 @@
+{{> header}}
+<div class="profile-container">
+
+  <h1>Your Profile</h1>
+
+  {{#each profile}}
+  <div class="card">
+  
+    <h3 class="businessname">{{businessName}}</h3>
+
+    <ul>
+        <li>{{branche}}</li>
+        <li>{{size}}</li>
+        <li>{{time}}</li>
+    </ul>
+
+    <h3 class="username">{{name}}, {{age}}</h3>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis porro magnam quae tempora ipsum reprehenderit libero ipsam at voluptas soluta magni iusto, repudiandae eius ullam necessitatibus minus facere fugiat accusantium.</p>
+
+  </div>
+  {{/each}}
+
+  <div class="profilebuttons">
+    <a href="/viewprofile" class="viewprofile">view profile</a>
+    <a href="/editprofile" class="editprofile">edit profile</a>
+  </div>
+
+
+
+</div>
+
+<script src="/scripts/profile.js"></script>
+{{> footer}}
