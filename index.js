@@ -9,9 +9,8 @@ const Handlebars = require("handlebars");
 const template = Handlebars.compile("Name: {{name}}");
 const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser');
-const slug = require('slug');
+// const slug = require('slug');
 // const multer = require('multer');
-// const upload = multer({ dest: 'uploads/'})
 
 console.log(template({ name: "UPSTART" }));
 
@@ -71,23 +70,6 @@ app.engine('hbs', exphbs({
 }));
 
 // MULTER
-// const storage = multer.diskStorage({
-//   destination: function (req, file, callback) {
-//      callback(null, './public/uploads');
-//   },
-
-//   filename: function (req, file, callback){
-//      callback(null, Date.now() + '-' + file.originalname)
-//   }
-// });
-
-// const upload = multer({
-//   storage: storage,
-//   limits: {
-//      fileSize: 1024 * 1024 * 3,
-//   },
-// });
-
 
 // Declaring static files
 app.use(express.static(__dirname + "/public"));
@@ -110,12 +92,11 @@ app.get('/', async (req, res) => {
 });
 
 
-
-// PROFILE PAGE
+// PROFILE PAGE (CREATE)
 app.get('/profile', async (req, res) => {
 
-  profile = await db.collection('profile').find().toArray();
-  res.render('profile', {title:'add profile', profile});
+  // profile = await db.collection('profile').find().toArray();
+  res.render('profile', {title:'add profile'});
 });
 
 app.post('/profile', async (req,res) => {
@@ -133,27 +114,59 @@ app.post('/profile', async (req,res) => {
     'businessName': req.body.businessName,
     'branche': req.body.branche,
     'size': req.body.size,
-    'time': req.body.time
+    'time': req.body.time,
   };
   
   await db.collection('profile').deleteMany();
   await db.collection('profile').insertOne(profile);
   
   savedprofile = await db.collection('profile').find().toArray();
-  res.render('profile', {title:'add profile', savedprofile});
+  res.render('profile', {title:'add profile', profile});
 });
 
-// VIEW PROFILE
+// VIEW PROFILE (READ)
 app.get('/viewprofile', async (req, res) => {
 
   profile = await db.collection('profile').find().toArray();
   res.render('viewprofile', {title:'view profile', profile});
 });
 
-// EDIT PROFILE
+// EDIT PROFILE (UPDATE)
 app.get('/editprofile', async (req, res) => {
 
   profile = await db.collection('profile').find().toArray();
+  res.render('editprofile', {title:'edit profile', profile});
+});
+
+app.post('/editprofile', async (req,res) => {
+  await connectDB()
+  .then(() => {
+     console.log('Connection made for profile :)')
+  })
+  .catch( error => {
+     console.log(error)
+  });
+  
+  profile = await db.collection('profile').find().toArray();
+
+  const profileupdate = {
+    'name': req.body.name,
+    'age': req.body.age,
+    'businessName': req.body.businessName,
+    'branche': req.body.branche,
+    'size': req.body.size,
+    'time': req.body.time
+  };
+  
+  console.log(profileupdate)
+
+  await db.collection("profile")
+  .findOneAndUpdate(
+      {  },
+      { $set: profileupdate },
+      { new: true, upsert: true, returnOriginal: false }
+  );
+  
   res.render('editprofile', {title:'edit profile', profile});
 });
 

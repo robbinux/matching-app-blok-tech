@@ -19,6 +19,10 @@ body{
     align-items: center;
 }
 
+p{
+    margin: 0;
+}
+
 
 /* HEADER */
 header {
@@ -40,7 +44,7 @@ h1 {
 h2 {
     text-align: center;
     margin: 0;
-    padding: 0 0 5vh 0; 
+    padding: 0; 
     font-size: 2em;
 }
 
@@ -51,6 +55,7 @@ div.home-container{
     scroll-snap-type: x mandatory;
     width: 19em;
     user-select: none;
+    margin: 1em 0;
 }
 
 div.home-container::-webkit-scrollbar {
@@ -217,20 +222,83 @@ input.submit{
     border: none;
     border-radius: 3em;
     font-family: inherit;
+    background-color: lightgray;
+    transition: 0.2s ease-in-out;
+}
+
+input.submit:hover{
+    background-color: #ffff;
+    
+    transition: 0.2s ease-in-out;
 }
 
 div.profile-container div.card{
     background-color: grey;
     width: 15em;
+    z-index: 1;
 }
 
-/* hide form after submitting and show profile */
+/* hide form after submitting and show profile
 form.formhidden{
     display: none;
 }
 
 div.profile-container div.cardhidden{
     display: none;
+} */
+
+/* VIEW PROFILE */
+h1.viewprofile{
+    margin: 0 0 1em 0;
+}
+
+p.profilewarning{
+    text-align: center;
+    position: absolute;
+    width: auto;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+div.profile-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PROFILE FORM */
+form{
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.692);
+    padding: 2em;
+    border-radius: 2em;
+    z-index: 1;
+    margin: 1em 0;
+    text-align: center;
+}
+
+form input{
+    text-align: center;
+}
+
+form input:first-of-type, form input:nth-of-type(2), form input:nth-of-type(3), form select{
+    border-style: none;
+    background-color: whitesmoke;
+    border-radius: 0.2em;
+    margin: 0.2em 0 1em 0;
+    padding: 0.1em 0.5em;
+    font-family: inherit;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+}
+
+/* PROFILE NAVIGATION */
+div.profilebuttons{
+    z-index: 1;
 }
 
 /* MATCHES */
@@ -238,3 +306,4 @@ ul.people_list{
     list-style: none;
     padding: 0;
 }
+

@@ -2,17 +2,18 @@
 <div class="profile-container">
 
   <h1>Create New Profile</h1>
+  <p>This will delete your old profile</p>
 
   <form class="" name="profileform" action="/profile" method="post">
 
   <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" required><br>
+  <input type="text" id="name" name="name" placeholder="Your name" required><br>
 
   <label for="age">Age:</label><br>
-  <input type="text" id="age" name="age" required><br>
+  <input type="text" id="age" name="age" placeholder="Your age" required><br>
 
   <label for="businessName">Business name:</label><br>
-  <input type="text" id="businessName" name="businessName" value="{{businessName}}" required><br>
+  <input type="text" id="businessName" name="businessName" value="{{businessName}}" placeholder="Your business" required><br>
 
   <label for="branche">Kies een Branche:</label><br>
   <select id="branche" name="branche" required>
@@ -27,7 +28,7 @@
     <option value="Kunst, cultuur, amusement en media">Kunst, cultuur, amusement en media</option>
     <option value="Particulier onderwijs">Particulier onderwijs</option>
     <option value="Vervoer">Vervoer</option>
-    <option value="Zakelijke en persoonlijke dienstverlening">Zakelijke en persoonlijke dienstverlening</option>
+    <option value="Zakelijke en persoonlijke dienstverlening">Zakelijke dienstverlening</option>
     <option value="Zorg">Zorg</option>
   </select><br>
 
@@ -54,7 +55,7 @@
 
   <div class="profilebuttons">
     <a href="/viewprofile" class="viewprofile">view profile</a>
-    <a href="/editprofile" class="editprofile">edit profile</a>
+    {{!-- <a href="/editprofile" class="editprofile">edit profile</a> --}}
   </div>
 
 

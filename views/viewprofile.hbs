@@ -1,27 +1,38 @@
 {{> header}}
 <div class="profile-container">
 
-  <h1>Your Profile</h1>
+  <h1 class="viewprofile">Your Profile</h1>
+
+  <p class="profilewarning">
+    You have not created a profile yet. <br> <a href="/profile">Create a profile</a>
+  </p>
 
   {{#each profile}}
-  <div class="card">
-  
+  <div class="card" style="background-image: url(/uploads/{{image}});">
+    
+    <div class="textoverlay">
+    
+    <div class="textoverlaytop">
+    <div class="nameandbranche">
     <h3 class="businessname">{{businessName}}</h3>
-
+    <h4 class="branche">{{branche}}</h4>
+    </div>
     <ul>
-        <li>{{branche}}</li>
-        <li>{{size}}</li>
-        <li>{{time}}</li>
+        <li>{{size}} <br> werknemers</li>
+        <li>{{time}} <br> jaar</li>
     </ul>
+    </div>
 
+    <div class="textoverlaybottom">
     <h3 class="username">{{name}}, {{age}}</h3>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis porro magnam quae tempora ipsum reprehenderit libero ipsam at voluptas soluta magni iusto, repudiandae eius ullam necessitatibus minus facere fugiat accusantium.</p>
-
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis porro magnam quae tempora ipsum reprehenderit libero ipsam at voluptas soluta magni iusto.</p>
+    </div>
+    </div>
   </div>
   {{/each}}
 
   <div class="profilebuttons">
-    <a href="/viewprofile" class="viewprofile">view profile</a>
+    {{!-- <a href="/viewprofile" class="viewprofile">view profile</a> --}}
     <a href="/editprofile" class="editprofile">edit profile</a>
   </div>
 
