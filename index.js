@@ -185,6 +185,6 @@ app.get('/matches', async (req, res) => {
   });
 
 // start the server
- app.listen(port, function() {
-    console.log('app started');
-  });
+//  app.listen(port, function() {
+//     console.log('app started');
+//   });
