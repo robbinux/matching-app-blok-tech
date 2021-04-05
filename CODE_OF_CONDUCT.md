@@ -27,7 +27,7 @@ Voorbeelden van onaanvaardbaar gedrag van deelnemers zijn:
   professionele setting
 
 ## Moderatie rechten
-Het team heeft het recht en de verantwoordelijkheid om
+De administrator (@robbinux) heeft het recht en de verantwoordelijkheid om
 opmerkingen, commits, code, wiki-bewerkingen, problemen en andere bijdragen
 die niet in overeenstemming zijn met deze Code of Conduct te verwijderen en deze bijdrager te verbieden van verdere bijdrage.
 
