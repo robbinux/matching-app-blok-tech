@@ -1,5 +1,6 @@
 // server.js
-// const port = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 const express = require('express');
 const dotenv = require('dotenv').config();
@@ -185,6 +186,6 @@ app.get('/matches', async (req, res) => {
   });
 
 // start the server
-//  app.listen(port, function() {
-//     console.log('app started');
-//   });
+app.listen(port, () => {
+  console.log(`Gebruikte poort: ${port}!`)
+});
