@@ -2,7 +2,7 @@
 
 ## Missie
 In het belang van het bevorderen van een open en gastvrije werksfeer. Wij als
-bijdragers en teaam beloven deel te nemen aan ons project op een intimidatievrije ervaring voor iedereen, ongeacht leeftijd, lichaam
+bijdragers beloven deel te nemen aan ons project op een intimidatievrije ervaring voor iedereen, ongeacht leeftijd, lichaam
 grootte, handicap, etniciteit, genderidentiteit en -expressie, ervaringsniveau,
 opleiding, sociaaleconomische status, nationaliteit, persoonlijk voorkomen, ras,
 religie, of seksuele identiteit en geaardheid.
