@@ -1,9 +1,9 @@
 # Contributing
 
 Wanneer u bijdragen aan deze repository wilt doen bespreek dan eerst de wijziging die u wilt aanbrengen via een issue,
-e-mail of een andere methode met de eigenaren van deze repository.
+e-mail of een andere methode met de eigenaar van deze repository.
 
-Let op: we hebben een [Code of Conduct](https://github.com/CMD-JOBS/CMD-JOBS/blob/main/CODE_OF_CONDUCT.md), wij vragen u deze te volgen bij alle wijzigingen aan deze repository.
+Let op: we hebben een [Code of Conduct](https://github.com/robbinux/matching-app-blok-tech/blob/main/CODE_OF_CONDUCT.md), wij vragen u deze te volgen bij alle wijzigingen aan deze repository.
 
 ## Pull Request Process
 
