@@ -186,6 +186,6 @@ app.get('/matches', async (req, res) => {
   });
 
 // start the server
-app.listen(port, () => {
-  console.log(`Gebruikte poort: ${port}!`)
+app.listen(PORT, () => {
+  console.log(`Gebruikte poort: ${PORT}!`)
 });
