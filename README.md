@@ -34,6 +34,12 @@ Als je de database hebt ingesteld, start je de server:
 npm start
 ```
 
+## Bijdragen
+Als je wilt bijdragen aan deze app kun je dat doen door middel van een [Issue](https://github.com/CMD-JOBS/CMD-JOBS/issues).
+
+Zie ook:
+* [CONTRIBUTING](https://github.com/CMD-JOBS/matching-app-blok-tech/blob/main/CONTRIBUTING.md)
+* [CODE OF CONDUCT](https://github.com/CMD-JOBS/matching-app-blok-tech/blob/main/CODE_OF_CONDUCT.md)
 
 ## License
 
