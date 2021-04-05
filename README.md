@@ -24,7 +24,7 @@ Stel jouw database gegevens in (MongoDB)
 DB_URI= mongo link
 ```
 
-<img src="images/dbcollections.jpg" height="330px" alt="Database structure">
+<img src="images/dbcollections-01.jpg" height="330px" alt="Database structure">
 
 
 <br>
