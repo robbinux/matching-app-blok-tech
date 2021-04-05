@@ -7,12 +7,33 @@ UpStart is een online platform gericht op jonge ondernemers van 18-34 jaar. De a
 UpStart vormt een kickstart voor elke jonge ondernemer. Je geeft in de app aan in welke branche je werkt, hoe lang je hierin onderneemt, in welke fase je zit met je onderneming en hoe groot je onderneming is. Op basis hiervan krijg je potentiële matches te zien. Aan de hand van een intuïtieve swipe functie kan je kiezen welke ondernemer bij jouw past. Als deze ondernemer jouw dan ook naar rechts swiped heb je een match en kan je een gesprek aangaan via de chat functie.
 
 ## Install
+Clone deze repository naar jouw lokale folder
+```git
+git clone https://github.com/robbinux/matching-app-blok-tech.git
+```
+<br>
 
-`git clone https://github.com/robbinux/matching-app-blok-tech.git`
+Installeer de bijbehorende packages
+```js
+npm install
+```
+<br>
 
-`git pull`
+Stel jouw database gegevens in (MongoDB)
+```js
+DB_URI= mongo link
+```
 
-`npm start`
+<img src="images/dbcollections.jpg" height="330px" alt="Database structure">
+
+
+<br>
+
+Als je de database hebt ingesteld, start je de server:
+```js
+npm start
+```
+
 
 ## License
 
