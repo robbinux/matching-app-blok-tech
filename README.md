@@ -59,7 +59,7 @@ npm start
 ```
 
 ## Contributing
-Als je wilt bijdragen aan deze app kun je dat doen door middel van een [Issue](https://github.com/CMD-JOBS/CMD-JOBS/issues).
+Als je wilt bijdragen aan deze app kun je dat doen door middel van een [Issue](https://github.com/robbinux/matching-app-blok-tech/issues).
 
 Zie ook:
 * [CONTRIBUTING](https://github.com/robbinux/matching-app-blok-tech/blob/main/CONTRIBUTING.md)
