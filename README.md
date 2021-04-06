@@ -19,10 +19,10 @@ UpStart vormt een kickstart voor elke jonge ondernemer. Je geeft in de app aan i
 
 |                                                            |
 | ---------------------------------------------------------- |
-| 1. Maak een profiel aan                           |
-| 2. Bekijk je profiel          |
-| 3. Wijzig je profiel                        |
-| 4. Bekijk profielen                     |
+| 1. ✏️ Maak een profiel aan                           |
+| 2. 🙋‍♂️ Bekijk je profiel          |
+| 3. 📝 Wijzig je profiel                        |
+| 4. 🔍 Bekijk profielen                     |
 
 
 
