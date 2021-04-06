@@ -1,7 +1,5 @@
 // server.js
 const PORT = process.env.PORT || 3000;
-
-
 const express = require('express');
 const dotenv = require('dotenv').config();
 const exphbs = require('express-handlebars');
@@ -10,11 +8,9 @@ const Handlebars = require("handlebars");
 const template = Handlebars.compile("Name: {{name}}");
 const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser');
-// const slug = require('slug');
-// const multer = require('multer');
+
 
 console.log(template({ name: "UPSTART" }));
-
 
 
 let db = null;
@@ -178,12 +174,13 @@ app.get('/matches', async (req, res) => {
   res.render('matches', {title:'matches', users});
 });
 
-
-
 //404
-  app.use(function(req, res, next) {
-    res.status(404).send('page not found');
-  });
+app.use(function(req, res, next) {
+  res.status(404).send('page not found');
+});
+
+// ------------------------- END OF ROUTING ------------------------
+
 
 // start the server
 app.listen(PORT, () => {
