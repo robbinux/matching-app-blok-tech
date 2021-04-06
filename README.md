@@ -43,7 +43,7 @@ npm install
 <br>
 
 Stel jouw database gegevens in (MongoDB)
-```js
+```
 DB_URI=<mongo link>
 DB_NAME=upstart
 ```
