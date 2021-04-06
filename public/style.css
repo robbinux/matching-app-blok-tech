@@ -67,8 +67,6 @@ div.card {
     min-width: 15em;
     padding: 2em;
     margin: 0 1em 1em 1em;
-    /* background-image: url(../images/guy-925730_1280.jpg); */
-    /* background-color: black; */
     background-size: cover;
     background-position: center;
     border-radius: 2em;
@@ -237,15 +235,6 @@ div.profile-container div.card{
     width: 15em;
     z-index: 1;
 }
-
-/* hide form after submitting and show profile
-form.formhidden{
-    display: none;
-}
-
-div.profile-container div.cardhidden{
-    display: none;
-} */
 
 /* VIEW PROFILE */
 h1.viewprofile{
