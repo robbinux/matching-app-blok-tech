@@ -4,8 +4,8 @@
   <h1>Edit your Profile</h1>
 
     <p class="profilewarning">
-    You have not created a profile yet. <br> <a href="/profile">Create a profile</a>
-  </p>
+    {{message}} <br> <a href="/profile">{{link}}</a>
+    </p>
 
   {{#each profile}}
   <form class="" name="profileform" action="/editprofile" method="post">

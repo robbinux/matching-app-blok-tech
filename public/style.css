@@ -1,9 +1,4 @@
 /* GLOBAL POSITIONING */
-html {
-
-}
-
-
 body{
     background-image: url(../images/background-upstart.jpg);
     background-size: cover;
@@ -23,6 +18,9 @@ p{
     margin: 0;
 }
 
+.hidden{
+    display: none;
+}
 
 /* HEADER */
 header {

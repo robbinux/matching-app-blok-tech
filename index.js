@@ -66,8 +66,6 @@ app.engine('hbs', exphbs({
   }
 }));
 
-// MULTER
-
 // Declaring static files
 app.use(express.static(__dirname + "/public"));
 
@@ -84,15 +82,12 @@ app.set('view engine', 'hbs');
 app.get('/', async (req, res) => {
   let users = {};
   users = await db.collection('users').find().toArray();
-  // var user = users[Math.floor(Math.random()*users.length)];
   res.render('home', {title:'Home', users});
 });
 
 
 // PROFILE PAGE (CREATE)
 app.get('/profile', async (req, res) => {
-
-  // profile = await db.collection('profile').find().toArray();
   res.render('profile', {title:'add profile'});
 });
 
@@ -117,22 +112,36 @@ app.post('/profile', async (req,res) => {
   await db.collection('profile').deleteMany();
   await db.collection('profile').insertOne(profile);
   
-  savedprofile = await db.collection('profile').find().toArray();
+  // savedprofile = await db.collection('profile').find().toArray();
   res.render('profile', {title:'add profile', profile});
 });
 
 // VIEW PROFILE (READ)
 app.get('/viewprofile', async (req, res) => {
 
+  let profile = {}
   profile = await db.collection('profile').find().toArray();
-  res.render('viewprofile', {title:'view profile', profile});
+
+  if (profile.length === 0) {
+    res.render('viewprofile', {title:'view profile', message:'You have not created a profile yet', link:'Create a profile'});
+  }
+  else {
+    res.render('viewprofile', {title:'view profile', profile});
+  }
 });
 
 // EDIT PROFILE (UPDATE)
 app.get('/editprofile', async (req, res) => {
 
+  let profile = {}
   profile = await db.collection('profile').find().toArray();
-  res.render('editprofile', {title:'edit profile', profile});
+
+  if (profile.length === 0) {
+    res.render('editprofile', {title:'edit profile', message:'You have not created a profile yet', link:'Create a profile'});
+  }
+  else {
+    res.render('editprofile', {title:'view profile', profile});
+  }
 });
 
 app.post('/editprofile', async (req,res) => {
@@ -144,6 +153,7 @@ app.post('/editprofile', async (req,res) => {
      console.log(error)
   });
   
+  let profile = {}
   profile = await db.collection('profile').find().toArray();
 
   const profileupdate = {
@@ -175,9 +185,10 @@ app.get('/matches', async (req, res) => {
 });
 
 //404
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   res.status(404).send('page not found');
 });
+
 
 // ------------------------- END OF ROUTING ------------------------
 

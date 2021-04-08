@@ -4,11 +4,11 @@
   <h1 class="viewprofile">Your Profile</h1>
 
   <p class="profilewarning">
-    You have not created a profile yet. <br> <a href="/profile">Create a profile</a>
+    {{message}} <br> <a id="createprof" href="/profile">{{link}}</a>
   </p>
 
   {{#each profile}}
-  <div class="card" style="background-image: url(/uploads/{{image}});">
+  <div class="card">
     
     <div class="textoverlay">
     
@@ -32,7 +32,6 @@
   {{/each}}
 
   <div class="profilebuttons">
-    {{!-- <a href="/viewprofile" class="viewprofile">view profile</a> --}}
     <a href="/editprofile" class="editprofile">edit profile</a>
   </div>
 
