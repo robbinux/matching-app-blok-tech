@@ -234,8 +234,22 @@ div.profile-container div.card{
     z-index: 1;
 }
 
+div.profile-container a{
+    background-color: none;
+    border: outset;
+    padding: 0.5em 2em;
+    text-decoration: none;
+    color: white;
+    border-radius: 2em;
+}
+
+div.profile-container a:hover{
+    background-color: gray;
+    transition: 0.2s ease-in-out;
+}
+
 /* VIEW PROFILE */
-h1.viewprofile{
+h1.viewprofile, h1.editprofile{
     margin: 0 0 1em 0;
 }
 
@@ -250,6 +264,19 @@ p.profilewarning{
     justify-content: center;
     z-index: 1;
 }
+
+a#createprof{
+    margin: 1em 0 0 0;
+    background-color: whitesmoke;
+    color: darkorchid;
+}
+
+a#createprof:hover{
+    background-color: gray;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
 
 div.profile-container{
     display: flex;

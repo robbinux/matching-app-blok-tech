@@ -181,7 +181,8 @@ app.post('/editprofile', async (req,res) => {
 app.get('/matches', async (req, res) => {
   let users = {};
   users = await db.collection('users').find().toArray();
-  res.render('matches', {title:'matches', users});
+  const amount = users.length;
+  res.render('matches', {title:'matches', users, amount});
 });
 
 //404
